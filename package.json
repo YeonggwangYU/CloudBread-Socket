@@ -3,7 +3,7 @@
   "scripts": {
     "test": "mocha tests/* --require babel-core/register --require babel-polyfill --require ./tests/helper --recursive",
     "start": "node server.js",
-    "build": "npm run test && $(npm bin)/babel-node tools/run build -- --release",
+    "build": "npm run test && C:/Users/Yeonggwang/Desktop/GitPro/CloudBread-Socket/node_modules/.bin/babel-node tools/run build -- --release",
     "lint": "eslint . --ext .js,.jsx",
     "clean": "babel-node tools/run clean",
     "deploy": "npm run lint && npm run test && babel-node tools/run deploy -- --release"
@@ -24,6 +24,7 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "cors": "^2.7.1",
+    "del": "^2.2.2",
     "express": "^4.13.4",
     "redis": "^2.4.2",
     "socket.io": "^1.4.5",
@@ -33,7 +34,7 @@
   "devDependencies": {
     "app-module-path": "^1.0.5",
     "babel-cli": "^6.5.1",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^6.0.0",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
@@ -45,8 +46,9 @@
     "bluebird": "^3.3.3",
     "browser-sync": "^2.11.1",
     "chai": "^3.5.0",
-    "eslint": "^2.2.0",
+    "eslint": "^2.5.0",
     "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.2.3",
     "file-loader": "^0.8.5",
     "gaze": "^0.5.2",
     "git-repository": "^0.1.1",
@@ -60,5 +62,23 @@
     "supertest": "^1.2.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14"
-  }
+  },
+  "name": "cloudbread-socket",
+  "description": "[![Build Status](https://travis-ci.org/Beingbook/babel6-api-server.svg?branch=master)](https://travis-ci.org/Beingbook/babel6-api-server)\r [![Dependency Status](https://david-dm.org/CloudBreadProject/CloudBread-Socket.svg?style=flat-square)](https://david-dm.org/CloudBreadProject/CloudBread-Socket)\r [![devDependency Status](https://david-dm.org/CloudBreadProject/CloudBread-Socket/dev-status.svg?style=flat-square)](https://david-dm.org/CloudBreadProject/CloudBread-Socket#info=devDependencies)\r [![Code Climate](https://codeclimate.com/github/CloudBreadProject/CloudBread-Socket/badges/gpa.svg)](https://codeclimate.com/github/CloudBreadProject/CloudBread-Socket)\r [![Issue Count](https://codeclimate.com/github/CloudBreadProject/CloudBread-Socket/badges/issue_count.svg)](https://codeclimate.com/github/CloudBreadProject/CloudBread-Socket)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YeonggwangYU/CloudBread-Socket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YeonggwangYU/CloudBread-Socket/issues"
+  },
+  "homepage": "https://github.com/YeonggwangYU/CloudBread-Socket#readme"
 }
