@@ -60,9 +60,9 @@ module.exports =
    value: true
  });
  var _process$env = process.env;
- var REDIS_HOST = _process$env.REDIS_HOST;
- var REDIS_PORT = _process$env.REDIS_PORT;
- var REDIS_AUTH_KEY = _process$env.REDIS_AUTH_KEY;
+ var REDIS_HOST = _process$env.REDIS_HOST,
+     REDIS_PORT = _process$env.REDIS_PORT,
+     REDIS_AUTH_KEY = _process$env.REDIS_AUTH_KEY;
  exports.REDIS_HOST = REDIS_HOST;
  exports.REDIS_PORT = REDIS_PORT;
  exports.REDIS_AUTH_KEY = REDIS_AUTH_KEY;
@@ -138,15 +138,14 @@ module.exports =
  
  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
  
- function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; } /* eslint no-console: 0, no-throw-literal: 0 */
+ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /* eslint no-console: 0, no-throw-literal: 0 */
  
  
  var app = (0, _express2.default)();
  var server = __webpack_require__(7).Server(app); // eslint-disable-line
  server.listen(process.env.PORT || (8222), function () {
-   var _server$address = server.address();
- 
-   var port = _server$address.port;
+   var _server$address = server.address(),
+       port = _server$address.port;
  
    console.log('The server is listening at http://localhost:' + port);
    if (false) {
@@ -197,9 +196,9 @@ module.exports =
  
    // authorize user
    use('authenticate user', function () {
-     var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(_ref) {
-       var token = _ref.token;
-       var username = _ref.username;
+     var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(_ref2) {
+       var token = _ref2.token,
+           username = _ref2.username;
        var userInfo, user;
        return regeneratorRuntime.wrap(function _callee$(_context) {
          while (1) {
@@ -240,17 +239,16 @@ module.exports =
            }
          }
        }, _callee, undefined);
-     })),
-         _this = undefined;
+     }));
  
      return function (_x) {
-       return ref.apply(_this, arguments);
+       return _ref.apply(this, arguments);
      };
    }());
  
    // join channel
-   use('join channel', function (_ref2) {
-     var link = _ref2.link;
+   use('join channel', function (_ref3) {
+     var link = _ref3.link;
  
      var user = users[id];
      if (!user) throw 'you should be authorized';
@@ -275,8 +273,8 @@ module.exports =
    });
  
    // leave channel
-   use('leave channel', function (_ref3) {
-     var link = _ref3.link;
+   use('leave channel', function (_ref4) {
+     var link = _ref4.link;
  
      var user = users[id];
      if (!user) throw 'you should be authorized';
@@ -294,9 +292,9 @@ module.exports =
    });
  
    // send new message to users in the channel
-   use('new message', function (_ref4) {
-     var link = _ref4.link;
-     var content = _ref4.content;
+   use('new message', function (_ref5) {
+     var link = _ref5.link,
+         content = _ref5.content;
  
      var user = users[id];
      if (!user) throw 'you should be authorized';
