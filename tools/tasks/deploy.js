@@ -11,8 +11,8 @@ async function deploy() {
   // By default deploy to the staging deployment slot
   const remote = {
     name: 'azure',
-    url: 'https://beingbook@hbh-cloudbread-socket.scm.azurewebsites.net:443/hbh-cloudbread-socket.git',
-    website: 'http://hbh-cloudbread-socket.azurewebsites.net',
+    url: 'https://inia@fe0-app.scm.azurewebsites.net:443/fe0-app.git',
+    website: 'http://fe0-app.azurewebsites.net',
   };
 
   // Initialize a new Git repository inside the `/build` folder
